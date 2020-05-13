@@ -3,10 +3,7 @@
 // Select size input
 
 function makeGrid() {
-
-    // Your code goes here!
     
-        
     const myHeight = document.getElementById("inputHeight").value;
     const myWidth = document.getElementById("inputWidth").value;
        

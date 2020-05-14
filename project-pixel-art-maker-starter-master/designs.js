@@ -1,21 +1,31 @@
+const color = document.getElementById('colorPicker').value;
 
-function makeGrid() {
+const height = document.getElementById('inputHeight').value;
+const width = document.getElementById('inputWidth').value;
+
+const sizePicker = document.getElementById('sizePicker');
+
+sizePicker.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const height = document.querySelector('#inputHeight').value;
+    const width = document.querySelector('#inputWidth').value;
+    makeGrid(height, width);
+});
+
+function makeGrid(height, width) {
+    const myTable = document.getElementById('pixelCanvas');
     
-    const myHeight = document.getElementById("inputHeight").value;
-    const myWidth = document.getElementById("inputWidth").value;
-       
-    document.getElementById("pixelCanvas").innerHTML = '';    
-    
-    for (var i = 1; i <= myHeight; i++){
-            const row = document.createElement("tr")
-            document.getElementById("pixelCanvas").appendChild(row)
-            for (var x = 1; x <=myWidth; x++){
-                const cell = document.createElement("td")
-                cell.addEventListener("click",function(){ this.style.backgroundColor=document.getElementById("colorPicker").value})
-                row.appendChild(cell)
-            }
-
-        }
-
-
-    }
+    myTable.innerHTML = "";
+    for (i = 1; i <= height; i++) {
+        var tableRows = document.createElement('tr');
+        for (x = 1; x <= width; x++) {
+            var tableCells = document.createElement('td');
+            tableRows.appendChild(tableCells);
+            myTable.appendChild(tableRows);
+            //fills in cell color
+            tableCells.addEventListener('click', function(event) {
+                event.target.style.backgroundColor = document.getElementById('colorPicker').value;
+            });
+        };
+    };
+};

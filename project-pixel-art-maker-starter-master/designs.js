@@ -1,6 +1,3 @@
-// Select color input
-
-// Select size input
 
 function makeGrid() {
     
@@ -9,7 +6,7 @@ function makeGrid() {
        
     document.getElementById("pixelCanvas").innerHTML = '';    
     
-        for (var i = 1; i <= myHeight; i++){
+    for (var i = 1; i <= myHeight; i++){
             const row = document.createElement("tr")
             document.getElementById("pixelCanvas").appendChild(row)
             for (var x = 1; x <=myWidth; x++){
@@ -17,8 +14,8 @@ function makeGrid() {
                 cell.addEventListener("click",function(){ this.style.backgroundColor=document.getElementById("colorPicker").value})
                 row.appendChild(cell)
             }
-    
-        }    
-       
-        
+
+        }
+
+
     }

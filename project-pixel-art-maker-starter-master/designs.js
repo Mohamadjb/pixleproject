@@ -22,7 +22,6 @@ function makeGrid(height, width) {
             var tableCells = document.createElement('td');
             tableRows.appendChild(tableCells);
             myTable.appendChild(tableRows);
-            //fills in cell color
             tableCells.addEventListener('click', function(event) {
                 event.target.style.backgroundColor = document.getElementById('colorPicker').value;
             });
